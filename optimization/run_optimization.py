@@ -5,8 +5,8 @@ from functools import partial
 # Define the parameter space for chunk sizes
 pbounds = {
     'lev': (1, 12),
-    'lat': (90, 640),
-    'lon': (43, 180)
+    'lat': (43, 400),
+    'lon': (90, 680)
 }
 
 fname="/nfs3m/css/curated01/g5nr/data/Ganymed/7km/c1440_NR/DATA/0.0625_deg/inst/inst30mn_3d_T_Nv/Y2006/M06/D15/c1440_NR.inst30mn_3d_T_Nv.20060615_2330z.nc4"
