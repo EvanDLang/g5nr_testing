@@ -1,5 +1,5 @@
 [project]
-name = "g5nr-testing"
+name = "opt_testing"
 authors = ["Evan Lang <evan.d.lang@nasa.gov>"]
 description = "Add a short description here"
 version = "0.1.0"
@@ -26,6 +26,7 @@ kerchunk = "==0.2.8"
 fsspec = "==2025.2.0"
 ipython = "*"
 requests = "*"
+bayesian-optimization = "*"
 
 [system-requirements]
 linux = "4.12"
