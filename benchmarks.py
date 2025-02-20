@@ -66,6 +66,7 @@ if __name__ == "__main__":
     experiment_dir = Path("experiments")
     fnames = sorted(experiment_dir.glob("*.nc"))
     resultfile =  experiment_dir / "chunk-size.csv"
+    number=40
     # fname = experiment_dir / "chunked-1x2x67x120.nc"
     # fnames = [experiment_dir / fname for fname in ["chunked-1x2x67x160.nc", "chunked-1x2x67x144.nc", "chunked-1x2x121x192.nc", "chunked-1x2x144x240.nc"]]
     for fname in fnames:
@@ -73,7 +74,7 @@ if __name__ == "__main__":
         # Note: Ignore xarray duplicate dimension warnings...
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            topen = timeit.timeit(f'do_open("{fname}")', globals=globals(), number=40)
-            ttimeseries = timeit.timeit(f'do_subset_vertical_mean("{fname}")', globals=globals(), number=40)
-            tspatial = timeit.timeit(f'do_spatial_1_vertical("{fname}")', globals=globals(), number=40)
+            topen = timeit.timeit(f'do_open("{fname}")', globals=globals(), number=number) / number
+            ttimeseries = timeit.timeit(f'do_subset_vertical_mean("{fname}")', globals=globals(), number=number) / number
+            tspatial = timeit.timeit(f'do_spatial_1_vertical("{fname}")', globals=globals(), number=number) / number
         writeline(resultfile, [fname.stem, topen, ttimeseries, tspatial])

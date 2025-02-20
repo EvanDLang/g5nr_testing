@@ -7,7 +7,7 @@ import shutil
 import requests
 
 
-def change_paths(root_file_dir, pattern=r"(/nfs3m/css/curated01/g5nr/data/Ganymed/7km/c1440_NR)", updated_root="https://g5nr.nccs.nasa.gov/data", test_updates=True)
+def change_paths(root_file_dir, pattern=r"(/nfs3m/css/curated01/g5nr/data/Ganymed/7km/c1440_NR)", updated_root="https://g5nr.nccs.nasa.gov/data", test_updates=True):
     # root_file_dir = "combined/Y2006-M01-D01.parq"
 
     root, ext = os.path.splitext(root_file_dir)
